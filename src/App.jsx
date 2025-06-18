@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import Home from './pages/Home/Home'
+// import Internships from './pages/Internships'
+import Navbar from './components/Navbar/Navbar'
+import './index.css' // Using only index.css for global styles
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+// Page transition animation
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  in: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut'
+    }
+  },
+  out: {
+    opacity: 0,
+    y: -20,
+    transition: {
+      duration: 0.3,
+      ease: 'easeIn'
+    }
+  }
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      {/* Fixed Navbar with dark tech styling */}
+      <Navbar />
+      
+      {/* Animated page transitions */}
+      <AnimatePresence mode='wait'>
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                className="page-container"
+              >
+                <Home />
+              </motion.div>
+            } 
+          />
+          
+          <Route 
+            path="/internships" 
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                className="page-container"
+              >
+              </motion.div>
+            } 
+          />
+        </Routes>
+      </AnimatePresence>
+    </BrowserRouter>
+  )
+}
