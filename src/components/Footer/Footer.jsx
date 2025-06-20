@@ -2,7 +2,7 @@ import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt
 import { motion } from 'framer-motion'
 import './Footer.css'
 
-export default function Footer({setShowTerms}) {
+export default function Footer({setShowTerms, setShowRefundAndCancellationPolicy}) {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -37,7 +37,7 @@ export default function Footer({setShowTerms}) {
           </p>
           <div className="social-links">
             <motion.a 
-              href="https://linkedin.com/" 
+              href="https://www.linkedin.com/company/vedarc-technologies-private-limited" 
               target="_blank"
               whileHover={{ y: -3, color: 'var(--neon-cyan)' }}
             >
@@ -141,6 +141,8 @@ export default function Footer({setShowTerms}) {
       {/* Copyright */}
       <div className="copyright">
           <a onClick={() => setShowTerms(true)} >Terms & Conditions</a>
+          <span> | </span>
+          <a onClick={() => setShowRefundAndCancellationPolicy(true)} >Refund and Cancellation Policy</a>
         <div className="circuit-line"></div>
         <div className="footer-links">
           {/* <a href="#">Privacy Policy</a> */}

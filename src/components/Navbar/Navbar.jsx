@@ -3,6 +3,7 @@ import { Link } from 'react-scroll'
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { RiArrowLeftRightLine } from 'react-icons/ri'
+import logo from "./../../assets/LOGO VEDARC.png";
 import './Navbar.css'
 
 export default function Navbar() {
@@ -48,7 +49,9 @@ export default function Navbar() {
             smooth={true}
             onSetActive={() => handleSetActive('hero')}
           >
-            <span className="glitch" data-text="">VEDARC</span>
+            <span id='logo-container'>
+            <span className="glitch" data-text=""> <img src={logo} alt="" /> VEDARC</span>
+            </span>
           </Link>
           {/* <RiArrowLeftRightLine className="connection-icon" /> */}
         </motion.div>

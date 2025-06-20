@@ -56,9 +56,21 @@
   letter-spacing: 1px;
 }
 
+#logo-container {
+  display: flex;
+  align-items: center; /* vertical center */
+  gap: 10px; /* space between image and text */
+}
+
 .glitch {
-  position: relative;
   color: var(--neon-cyan);
+  position: relative;
+  font-size: 2rem;
+}
+
+.glitch img {
+  width: 100px;
+  vertical-align: middle;
 }
 
 .glitch::before {

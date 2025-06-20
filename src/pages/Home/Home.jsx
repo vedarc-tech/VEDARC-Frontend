@@ -4,6 +4,7 @@ import Hero from '../../components/Hero/Hero'
 import About from '../../components/About/About'
 import Projects from '../../components/Projects/Projects.jsx'
 import TermsAndConditions from '../../components/TermsAndConditions/TermsAndCondition';
+import RefundAndCancellationPolicy from '../../components/RefundAndCancellationPolicy/RefundAndCancellationPolicy.jsx';
 // import Contact from '../../components/Contact/Contact'
 import Footer from '../../components/Footer/Footer.jsx'
 
@@ -12,6 +13,7 @@ import './Home.css'
 export default function Home() {
   const ref = useRef(null)
   const [showTerms, setShowTerms] = useState(false);
+  const [ShowRefundAndCancellationPolicy, setShowRefundAndCancellationPolicy] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end']
@@ -49,12 +51,20 @@ export default function Home() {
       {/* </section>
 
       <section id="footer"> */}
-        <Footer setShowTerms={setShowTerms}/>
+        <Footer 
+        setShowTerms={setShowTerms}
+        setShowRefundAndCancellationPolicy={setShowRefundAndCancellationPolicy}
+        />
       </section>
 
       <TermsAndConditions
         isVisible={showTerms}
         onClose={() => setShowTerms(false)}
+      />
+
+      <RefundAndCancellationPolicy
+        isVisible={ShowRefundAndCancellationPolicy}
+        onClose={() => setShowRefundAndCancellationPolicy(false)}
       />
 
       {/* Tech-style decorative elements */}

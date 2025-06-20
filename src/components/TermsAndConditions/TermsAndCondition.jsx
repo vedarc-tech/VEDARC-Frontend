@@ -158,31 +158,6 @@ function TermsAndCondition({ isVisible, onClose }) {
                   </p>
                 </div>
 
-                <div className="terms-section">
-                  <h3>Refund and Cancellation Policy</h3>
-
-                  <h4>1. Services</h4>
-                  <ul>
-                    <li>Once a service has been initiated, no refund will be provided unless stated in a signed agreement.</li>
-                    <li>In case of cancellation before project kick-off, partial refund may be considered based on effort already invested.</li>
-                  </ul>
-
-                  <h4>2. Digital Products</h4>
-                  <ul>
-                    <li>All sales of digital products are final. No refund will be given for any downloadable products unless the file is defective and we are unable to replace it.</li>
-                  </ul>
-
-                  <h4>3. Internship Payments</h4>
-                  <ul>
-                    <li>Any fees paid towards certificate issuance or training modules are non-refundable.</li>
-                    <li>If a student drops out or fails to complete the internship, no refund will be provided.</li>
-                  </ul>
-
-                  <h4>4. Contact for Issues</h4>
-                  <p>
-                    If you believe a refund is applicable based on a specific agreement or exceptional case, please email: support@vedarc.co.in with full details.
-                  </p>
-                </div>
               </div>
             </motion.div>
           </div>
