@@ -1,13 +1,17 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll } from 'framer-motion'
-import Hero from '../components/Hero/Hero'
-import About from '../components/About/About'
-import Projects from '../components/Projects/Projects.jsx'
-// import Contact from '../components/Contact/Contact'
+import Hero from '../../components/Hero/Hero'
+import About from '../../components/About/About'
+import Projects from '../../components/Projects/Projects.jsx'
+import TermsAndConditions from '../../components/TermsAndConditions/TermsAndCondition';
+// import Contact from '../../components/Contact/Contact'
+import Footer from '../../components/Footer/Footer.jsx'
+
 import './Home.css'
 
 export default function Home() {
   const ref = useRef(null)
+  const [showTerms, setShowTerms] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end']
@@ -42,7 +46,16 @@ export default function Home() {
 
       <section id="contact">
         {/* <Contact /> */}
+      {/* </section>
+
+      <section id="footer"> */}
+        <Footer setShowTerms={setShowTerms}/>
       </section>
+
+      <TermsAndConditions
+        isVisible={showTerms}
+        onClose={() => setShowTerms(false)}
+      />
 
       {/* Tech-style decorative elements */}
       <div className="grid-overlay" aria-hidden="true" />
