@@ -210,6 +210,12 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+
+  .hero-content {
+    transition: all ease-in-out;
+    zoom: 0.8;
+  }
+
   .tech-orb {
     width: 200px;
     height: 200px;
