@@ -54,7 +54,6 @@ function RefundAndCancellationPolicy({ isVisible, onClose }) {
               <h2 id="terms-title" className="terms-title">
                 <span className="highlight">VEDARC TECHNOLOGIES PRIVATE LIMITED</span>
                 <br />
-                Website Terms and Conditions of Use
               </h2>
                 <p className="terms-date">Last updated: 20-06-2025</p>
 
